@@ -55,29 +55,6 @@ namespace Puntos.BLL
 
         }
 
-        public static bool Eliminar(int TipoID)
-        {
-            bool paso = false;
-
-            try
-            {
-                Contexto contex = new Contexto();
-
-                var t = contex.Pago.Find(TipoID);
-
-                contex.Pago.Remove(t);
-                contex.SaveChanges();
-
-                paso = true;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
-            return paso;
-        }
-
         public static List<Pagos> GetList(Expression<Func<Pagos, bool>> criterioBusqueda)
         {
             List<Pagos> t = new List<Pagos>();

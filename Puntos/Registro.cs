@@ -1,4 +1,5 @@
 ﻿using Puntos.BLL;
+using Puntos.DAL;
 using Puntos.Entidades;
 using System;
 using System.Collections.Generic;
@@ -55,7 +56,21 @@ namespace Puntos
             fechadateTimePicker.Text = String.Empty;
             estudianteIDtextBox.Text = String.Empty;
             observacionestextBox.Text = String.Empty;
-
         }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            int Id = 0;
+            Contexto d = new Contexto();
+
+            int.TryParse(pagoIDtextBox.Text, out Id);
+
+            var t = d.Pago.Find(Id);
+
+            d.Pago.Remove(t);
+            d.SaveChanges();
+        }
+
+
     }
 }

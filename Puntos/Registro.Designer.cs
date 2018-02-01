@@ -40,12 +40,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.fechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.buttonModificar = new System.Windows.Forms.Button();
+            this.vacioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.montonumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.buscarbutton = new System.Windows.Forms.Button();
             this.buttonEliminar = new System.Windows.Forms.Button();
             this.buttonNuevo = new System.Windows.Forms.Button();
             this.buttonRegistrar = new System.Windows.Forms.Button();
-            this.vacioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.montonumericUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.vacioerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.montonumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -102,7 +102,7 @@
             // 
             this.pagoIDtextBox.Location = new System.Drawing.Point(123, 9);
             this.pagoIDtextBox.Name = "pagoIDtextBox";
-            this.pagoIDtextBox.Size = new System.Drawing.Size(170, 20);
+            this.pagoIDtextBox.Size = new System.Drawing.Size(76, 20);
             this.pagoIDtextBox.TabIndex = 22;
             // 
             // label2
@@ -142,57 +142,6 @@
             this.label3.TabIndex = 36;
             this.label3.Text = "Fecha";
             // 
-            // buttonModificar
-            // 
-            this.buttonModificar.Image = global::Puntos.Properties.Resources.DocumentEdit_40924;
-            this.buttonModificar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonModificar.Location = new System.Drawing.Point(237, 238);
-            this.buttonModificar.Name = "buttonModificar";
-            this.buttonModificar.Size = new System.Drawing.Size(66, 59);
-            this.buttonModificar.TabIndex = 39;
-            this.buttonModificar.Text = "Modificar";
-            this.buttonModificar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonModificar.UseVisualStyleBackColor = true;
-            // 
-            // buttonEliminar
-            // 
-            this.buttonEliminar.Image = global::Puntos.Properties.Resources.delete_remove_page_document_16678;
-            this.buttonEliminar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonEliminar.Location = new System.Drawing.Point(165, 238);
-            this.buttonEliminar.Name = "buttonEliminar";
-            this.buttonEliminar.Size = new System.Drawing.Size(66, 59);
-            this.buttonEliminar.TabIndex = 38;
-            this.buttonEliminar.Text = "Eliminar";
-            this.buttonEliminar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonEliminar.UseVisualStyleBackColor = true;
-            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
-            // 
-            // buttonNuevo
-            // 
-            this.buttonNuevo.Image = global::Puntos.Properties.Resources.New_File_36861;
-            this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonNuevo.Location = new System.Drawing.Point(94, 238);
-            this.buttonNuevo.Name = "buttonNuevo";
-            this.buttonNuevo.Size = new System.Drawing.Size(65, 59);
-            this.buttonNuevo.TabIndex = 33;
-            this.buttonNuevo.Text = "Nuevo";
-            this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonNuevo.UseVisualStyleBackColor = true;
-            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
-            // 
-            // buttonRegistrar
-            // 
-            this.buttonRegistrar.Image = global::Puntos.Properties.Resources.Save_as_37111;
-            this.buttonRegistrar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonRegistrar.Location = new System.Drawing.Point(22, 238);
-            this.buttonRegistrar.Name = "buttonRegistrar";
-            this.buttonRegistrar.Size = new System.Drawing.Size(66, 59);
-            this.buttonRegistrar.TabIndex = 32;
-            this.buttonRegistrar.Text = "Registrar";
-            this.buttonRegistrar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonRegistrar.UseVisualStyleBackColor = true;
-            this.buttonRegistrar.Click += new System.EventHandler(this.buttonRegistrar_Click);
-            // 
             // vacioerrorProvider
             // 
             this.vacioerrorProvider.ContainerControl = this;
@@ -219,13 +168,65 @@
             0,
             0});
             // 
+            // buscarbutton
+            // 
+            this.buscarbutton.Image = global::Puntos.Properties.Resources.preview_search_find_locate_1551;
+            this.buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buscarbutton.Location = new System.Drawing.Point(205, 9);
+            this.buscarbutton.Name = "buscarbutton";
+            this.buscarbutton.Size = new System.Drawing.Size(88, 33);
+            this.buscarbutton.TabIndex = 41;
+            this.buscarbutton.Text = "Buscar";
+            this.buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buscarbutton.UseVisualStyleBackColor = true;
+            this.buscarbutton.Click += new System.EventHandler(this.buscarbutton_Click);
+            // 
+            // buttonEliminar
+            // 
+            this.buttonEliminar.Image = global::Puntos.Properties.Resources.delete_remove_page_document_16678;
+            this.buttonEliminar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonEliminar.Location = new System.Drawing.Point(205, 233);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(66, 59);
+            this.buttonEliminar.TabIndex = 38;
+            this.buttonEliminar.Text = "Eliminar";
+            this.buttonEliminar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
+            // 
+            // buttonNuevo
+            // 
+            this.buttonNuevo.Image = global::Puntos.Properties.Resources.New_File_36861;
+            this.buttonNuevo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonNuevo.Location = new System.Drawing.Point(134, 233);
+            this.buttonNuevo.Name = "buttonNuevo";
+            this.buttonNuevo.Size = new System.Drawing.Size(65, 59);
+            this.buttonNuevo.TabIndex = 33;
+            this.buttonNuevo.Text = "Nuevo";
+            this.buttonNuevo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonNuevo.UseVisualStyleBackColor = true;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
+            // 
+            // buttonRegistrar
+            // 
+            this.buttonRegistrar.Image = global::Puntos.Properties.Resources.Save_as_37111;
+            this.buttonRegistrar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonRegistrar.Location = new System.Drawing.Point(62, 233);
+            this.buttonRegistrar.Name = "buttonRegistrar";
+            this.buttonRegistrar.Size = new System.Drawing.Size(66, 59);
+            this.buttonRegistrar.TabIndex = 32;
+            this.buttonRegistrar.Text = "Registrar";
+            this.buttonRegistrar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonRegistrar.UseVisualStyleBackColor = true;
+            this.buttonRegistrar.Click += new System.EventHandler(this.buttonRegistrar_Click);
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(324, 314);
+            this.Controls.Add(this.buscarbutton);
             this.Controls.Add(this.montonumericUpDown);
-            this.Controls.Add(this.buttonModificar);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.fechadateTimePicker);
             this.Controls.Add(this.label3);
@@ -241,6 +242,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Registro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pagos";
             ((System.ComponentModel.ISupportInitialize)(this.vacioerrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.montonumericUpDown)).EndInit();
@@ -265,9 +267,9 @@
         private System.Windows.Forms.DateTimePicker fechadateTimePicker;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonEliminar;
-        private System.Windows.Forms.Button buttonModificar;
         private System.Windows.Forms.ErrorProvider vacioerrorProvider;
         private System.Windows.Forms.NumericUpDown montonumericUpDown;
+        private System.Windows.Forms.Button buscarbutton;
     }
 }
 

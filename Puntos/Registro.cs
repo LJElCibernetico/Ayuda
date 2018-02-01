@@ -41,9 +41,9 @@ namespace Puntos
 
             p.PagosID = 0;
             p.Nombre = nombretextBox.Text;
-            p.Monto = int.Parse(montonumericUpDown.ToString());
+            p.Monto = int.Parse(montonumericUpDown.Text);
             p.Fecha = fechadateTimePicker.Text;
-            p.EstudianteID = int.Parse(estudianteIDtextBox.ToString());
+            p.EstudianteID = int.Parse(estudianteIDtextBox.Text);
             p.Observaciones = observacionestextBox.Text;
 
             return p;
@@ -51,6 +51,7 @@ namespace Puntos
 
         private void buttonNuevo_Click(object sender, EventArgs e)
         {
+            montonumericUpDown.Text = "1";
             pagoIDtextBox.Text = String.Empty;
             nombretextBox.Text = String.Empty;
             fechadateTimePicker.Text = String.Empty;
@@ -71,6 +72,29 @@ namespace Puntos
             d.SaveChanges();
         }
 
+        private void buscarbutton_Click(object sender, EventArgs e)
+        {
+            Contexto db = new Contexto();
 
+            int p = 0;
+            int.TryParse(pagoIDtextBox.Text, out p);
+
+            Pagos pago = new Pagos();
+
+            pago = db.Pago.Find(p);
+            if (pago == null)
+            {
+                MessageBox.Show("Persona No encontada");
+            }
+            else
+            {
+                MessageBox.Show("Persona Encontada");
+                nombretextBox.Text = pago.Nombre;
+                montonumericUpDown.Text = pago.Monto.ToString();
+                fechadateTimePicker.Text = pago.Fecha;
+                estudianteIDtextBox.Text = pago.EstudianteID.ToString();
+                observacionestextBox.Text = pago.Observaciones;
+            }
+        }
     }
 }

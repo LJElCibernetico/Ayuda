@@ -109,6 +109,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>PagosDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\preview_search_find_locate_1551.png" />
     <None Include="Resources\DocumentEdit_40924.png" />
     <None Include="Resources\delete_remove_page_document_16678.png" />
     <None Include="Resources\New_File_36861.png" />

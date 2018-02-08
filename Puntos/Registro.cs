@@ -96,5 +96,10 @@ namespace Puntos
                 observacionestextBox.Text = pago.Observaciones;
             }
         }
+
+        private void Registro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
